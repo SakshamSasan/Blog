@@ -5,9 +5,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(20,20,20,0.2);
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.inner-vintage {
+  font-family: 'Inner Vintage', sans-serif !important;
+  color:white;
+}
+.nav-list{
+  list-style-type: none;
+}
+.spa-link{
+  color:white;
+  text-decoration:none;
+  font-weight: bold;
+}
+.spa-link:hover{
+  color:rgba(255,255,255,0.6);
+}
+.blog-image{
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-create {
+  background-color: white;
+}
+.dim {
+  width:50%;
+  height:0;
+  padding-bottom:50%;
+
+}
+div.effect:hover{
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
