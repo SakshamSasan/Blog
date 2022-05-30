@@ -12,11 +12,11 @@ function App() {
         <NavBar />
       </div>
       <Routes>
-        <Route exact path="/" element={<Home />}>
+        <Route exact path="/Blog/" element={<Home />}>
         </Route>
-        <Route exact path="/create" element={<CreatePost />}>
+        <Route exact path="/Blog/create" element={<CreatePost />}>
         </Route>
-        <Route exact path="/posts/:id" element={<Post />}>
+        <Route exact path="/Blog/posts/:id" element={<Post />}>
         </Route> 
       </Routes>
     
