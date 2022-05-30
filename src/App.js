@@ -12,7 +12,7 @@ function App() {
         <NavBar />
       </div>
       <Routes>
-        <Route exact path="/Blog/" element={<Home />}>
+        <Route exact path="/Blog" element={<Home />}>
         </Route>
         <Route exact path="/Blog/create" element={<CreatePost />}>
         </Route>
