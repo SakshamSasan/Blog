@@ -11,10 +11,10 @@ function NavBar() {
           <div className="collapse navbar-collapse pt-lg-2 d-lg-flex justify-content-lg-end" id="navbarSupportedContent">
             <ul className="nav-list">
                <li className="d-lg-inline-block my-3 my-lg-0 me-lg-3">
-                <Link className="spa-link" to="/create">Create Post</Link>
+                <Link className="spa-link" to="/Blog/create">Create Post</Link>
               </li>
               <li className="d-lg-inline-block my-3 my-lg-0 mx-lg-4">
-                <Link to="/" aria-current="page" className="spa-link">Home</Link>
+                <Link to="/Blog" aria-current="page" className="spa-link">Home</Link>
               </li>
               
               
