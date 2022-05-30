@@ -43,7 +43,7 @@ function Home() {
                             return (
                                 
                                     <div className="col-12 bg-white rounded col-md-6 my-4 mx-md-5 effect" key={item.id}>
-                                        <Link to={`/posts/${item.id}`} style={{textDecoration:'none',color:'black'}} >
+                                        <Link to={`/Blog/posts/${item.id}`} style={{textDecoration:'none',color:'black'}} >
                                         <div className="row">
                                             <div className="col-3 blog-image" style={item.img}>
                                             </div>
@@ -76,7 +76,7 @@ function Home() {
                             return (
                                 
                                     <div className="col-12 bg-white rounded col-md-6 my-4 mx-md-5 effect" key={item.id}>
-                                        <Link to={`/posts/${item.id}`} style={{textDecoration:'none',color:'black'}}>
+                                        <Link to={`/Blog/posts/${item.id}`} style={{textDecoration:'none',color:'black'}}>
                                         <div className="row">
                                             <div className="col-3 blog-image" style={item.img}>
                                             </div>
