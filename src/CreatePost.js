@@ -9,10 +9,20 @@ function CreatePost() {
     var [content,setContent]=useState('')
     var [img,setImage]=useState('')
     var [type,setType]=useState('fiction');
-    
+    var [disabled,setDisabled]=useState(true)
+
+    function SubmitButton() {
+        if(title&&author&&content) {
+            return <button data-testid="dedo" type="submit" onClick={handleSubmit} className="btn btn-success" >Create Post</button>
+        }
+        else {
+            return <button data-testid="dedo" type="submit" onClick={handleSubmit} className="btn btn-success" disabled>Create Post</button>
+        }
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
+        
         var collectionRef = collection(db,'posts')
         try{
             await addDoc(collectionRef,{
@@ -26,6 +36,7 @@ function CreatePost() {
             })
             alert('Your post has been added successfully!')
             setSent(true)
+        
           }
           catch(error){
             alert('Sorry. Some error has occured:',error)
@@ -37,23 +48,23 @@ function CreatePost() {
     return(
         <div className="container rounded bg-create my-4">
             {sent&&<p className="p-3"><i>Your form has been submitted successfully. Return to Home</i></p>}
-            {!sent&&<form>
+            {!sent&&<form >
             <div className="row">
                 <div className="col-12 p-3">
-                    <label><strong>Title:</strong></label>
-                    <input value={title} onChange={(e)=>{setTitle(e.target.value)}} className='d-block w-100 my-2 border border-black rounded' type="text" />
+                    <label for="title"><strong>Title:</strong></label>
+                    <input id="title" value={title} onChange={(e)=>{setTitle(e.target.value)}} className='d-block w-100 my-2 border border-black rounded' type="text" />
                 </div>
             </div>
             <div className="row">
                 <div className="col-12 p-3">
-                    <label><strong>Author:</strong></label>
-                    <input value={author} onChange={(e)=>{setAuthor(e.target.value)}} className='d-block w-100 my-2 border border-black rounded' type="text" />
+                    <label for="author"><strong>Author:</strong></label>
+                    <input id="author" value={author} onChange={(e)=>{setAuthor(e.target.value)}} className='d-block w-100 my-2 border border-black rounded' type="text" />
                 </div>
             </div>
             <div className="row">
                 <div className="col-12 p-3">
-                    <label><strong>Cover Image Address:</strong></label>
-                    <input value={img} onChange={(e)=>{setImage(e.target.value)}} className='d-block w-100 my-2 border border-black rounded' type="text" />
+                    <label for="cov-img"><strong>Cover Image Address:</strong></label>
+                    <input id="cov-img" value={img} onChange={(e)=>{setImage(e.target.value)}} className='d-block w-100 my-2 border border-black rounded' type="text" />
                 </div>
             </div>
             <div className="row">
@@ -67,14 +78,14 @@ function CreatePost() {
             </div>
             <div className="row">
                 <div className="col-12 p-3">
-                    <label><strong>Content:</strong></label>
-                    <textarea value={content} onChange={(e)=>{setContent(e.target.value)}}  className='d-block w-100 my-2 border border-black rounded' style={{height:400}} type="text" />
+                    <label for="content"><strong>Content:</strong></label>
+                    <textarea id="content" value={content} onChange={(e)=>{setContent(e.target.value)}}  className='d-block w-100 my-2 border border-black rounded' style={{height:400}} type="text" />
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-12 p-3">
-                <button type="submit" onClick={handleSubmit} className="btn btn-success">Create Post</button>
+                <SubmitButton />
                 </div>
             </div>
             </form>}

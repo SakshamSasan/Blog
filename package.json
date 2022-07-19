@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "Blog",
   "version": "0.1.0",
   "homepage": "https://sakshamsasan.github.io/Blog/",
   "private": true,
@@ -41,6 +41,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.3",
+    "cypress": "^10.3.0",
     "gh-pages": "^4.0.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/SakshamSasan/Blog.git",
+  "author": "Saksham Sasan <100106267+SakshamSasan@users.noreply.github.com>",
+  "license": "MIT"
 }
